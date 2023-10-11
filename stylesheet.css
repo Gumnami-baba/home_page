@@ -1,0 +1,219 @@
+/* style.css */
+
+body
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 2rem auto;
+    border: solid;
+    border-radius: 6px;
+    max-width: 600px;
+    background-color: aliceblue;
+}
+form
+{
+    /*background-color: bisque;*/
+    padding: 2rem;
+    padding-right: 40px;
+    max-width: 600px;
+}
+
+.serialcontain{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: larger;
+    font-weight: bold;
+}
+.serialid{
+    .serialid,input{
+        max-width: 100px;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+    }
+}
+.operator{
+    .operator,select{
+        width: 150px;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+}
+
+.vehicalinp
+{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-evenly;
+    font-size: larger;
+    font-weight: bold;
+    margin-right: 2.8rem;
+    gap: 10px;
+}
+.vehicalno{
+    .vehicalno,input{
+        width: 190px;
+        font-size: larger;
+        font-weight: bold;
+        background-color: rgb(255, 255, 0);
+        text-transform:uppercase;
+    }
+}
+.wheelno{
+    .wheelno,input{
+        width: 50px;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+    }
+}
+
+
+
+.aboutparty
+{
+    /* border: solid; */
+    /* border-color: #96f8cae3; */
+    /* border-radius: 10px; */
+    /* background-color: rgba(0, 255, 234, 0.452); */
+    margin-top: 2rem;
+    font-size: larger;
+    font-weight: 500;
+    
+}
+.item{
+    margin-left: 5rem;
+    .item,input{
+        text-align: center;
+        margin-left: 1.29rem;
+        font-size: large;
+    }
+}
+.party{
+    margin-left: 5rem;
+    .party,input{
+        text-align: center;
+        margin-left: 0.56rem;
+        font-size: large;
+    }
+}
+.phone{
+    margin-left: 5rem;
+    .phone,input{
+        text-align: center;
+        font-size: large;
+    }
+}
+
+
+
+
+.Weightdata
+{
+    border-style: ridge;
+    background-color: rgba(127, 196, 236, 0.63);
+    border-radius: 10px;
+    border-color: cornflowerblue;
+    padding: 0.7rem;
+    
+}
+
+.firstwt
+{
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    padding-top: 5px;
+    margin-right: 0.5rem ;
+    font-size: large;
+    font-weight: bold;
+    
+
+    .firstwt,input
+    {
+        width: 130px;
+        text-align: center;
+        cursor: text;
+        font-weight:bolder;
+        font-size: larger;
+        place-content: center;
+
+    }
+
+}
+   
+.secondwt
+{
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    padding-top: 5px;
+    margin-right: 0.5rem ;
+    font-size: large;
+    font-weight: bold;
+
+    .secondwt,input
+    {
+        width: 130px;
+        text-align: center;
+        cursor: text;
+        font-weight: bolder;
+        font-size: larger;
+        place-content: center;
+    }
+  
+    
+}
+.netwt
+{
+   display: flex; 
+   margin-left: 0.25rem;
+   column-gap: 0px;
+   padding-top: 5px;
+   font-size: larger;
+   font-weight: bold;
+
+   .netwt,input
+   {
+        width: 130px;
+        text-align: center;
+        font-weight: bolder;
+        font-variant-numeric: slashed-zero;
+        font-size: larger;
+        cursor: not-allowed;
+    }
+}
+.charges
+{
+    /*display: flex;*/
+    column-gap: 10px;
+    padding-top: 20px;
+    font-size: larger;
+    font-weight: bold;
+    
+    .charges,input
+    {
+        text-align: center;
+        width: 60px;
+        font-weight: 900;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+}
+.firstwtbtn
+{
+    margin-top: 2rem;
+    display: flex;
+    gap: 40px;
+    justify-content: center; 
+    
+    .firstwtbtn,button{
+
+        height: 35px;
+        font-size: larger;
+        font-weight: bolder;
+    }
+
+}

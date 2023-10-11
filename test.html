@@ -1,11 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <h1>hello this is Satyajit Ray</h1>
+    
+    <form>
+        <div class="serialcontain">
+            <div class="serialid">
+                <label>Serial NO.</label>
+                <input type="text" id="serialid" placeholder="0000" readonly>
+            </div>               
+            <div class="operator">
+                <label for="select">Operator :</label>
+                <select title="select">
+                    <option>RITOM</option>
+                    <option>DIPOK</option>
+                    <option>PRITOM</option>
+                    <option>ASIS</option>
+                    <option>ANUJ</option>
+                </select>
+            </div>
+        </div>
+            
+
+        <div class="vehicalinp">
+            <div class="vehicalno">
+                <label>Vehical NO.</label>
+                <input type="text" placeholder="0000"></input>
+            </div>
+            <div class="wheelno">
+                <label>Wheel NO.</label>
+                <input type="text" placeholder="0000"  maxlength="2"></input>
+            </div>
+        </div>
+
+        <div class="aboutgood">
+            <div class="aboutparty">
+                <div class="item">
+                    <label>ITEM --</label>
+                    <input type="text" placeholder="mention item">
+                    <button type="button">+ADD</button>
+                </div>
+                <div class="party">
+                    <label>PARTY --</label>
+                    <input type="text" placeholder="mention party">
+                    <button type="button">+ADD</button>
+                </div>
+                <div class="phone">
+                    <label>PHONE --</label>
+                    <input type="text" placeholder="+91" maxlength="12">
+                    <button type="button">+ADD</button>
+                </div>
+            </div>
+        </div>
+            <br>
+
+            <div class="Weightdata">
+                <div class="firstwt" >
+                    <label>1ST WT</label>
+                    <input type="text" id="num1" onchange="updateWT()"></input>
+                    <input type="text" id="date" onload="getDate()" readonly></input>
+                    <input type="text" id="time" onchange="updateTime()" readonly></input>
+                    
+                </div>
+                <br>
+                <div class="secondwt">
+                    <label>2ND WT</label>
+                    <input type="text" id="num2" onchange="updateWT()"></input>
+                    <input type="text" id="date2" onchange="updateDate()" readonly></input>
+                    <input type="text" id="time2" onchange="updateTime()" readonly></input>
+                </div>
+                <br>
+
+                <div class="netwt">
+                    <label>NET WT</label>
+                    <input type="number" id="result" readonly></input>
+                </div>
+
+            </div>
+
+            <div class="charges">
+                <label>Charges --</label>
+                <input type="text" placeholder="000" maxlength="3"></input>
+            </div>
+
+            <div class="firstwtbtn">
+                <button type="button">CLOSE</button>
+                <button type="reset">RESET</button>
+                <button type="submit" id="save">SAVE</button>
+                <button type="button">Print</button>
+            </div>
+
+    </form>
+
+    <script src="ws.js"></script>
+
 </body>
+
 </html>
