@@ -1,105 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
 </head>
 <body>
-    
-    <form>
-        <div class="serialcontain">
-            <div class="serialid">
-                <label>Serial NO.</label>
-                <input type="text" id="serialid" placeholder="0000" readonly>
-            </div>               
-            <div class="operator">
-                <label for="select">Operator :</label>
-                <select title="select">
-                    <option>RITOM</option>
-                    <option>DIPOK</option>
-                    <option>PRITOM</option>
-                    <option>ASIS</option>
-                    <option>ANUJ</option>
-                </select>
-            </div>
+    <button type="button" id="parking-data-entry">parking</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ticket_no</th>
+                <th>operator</th>
+                <th>vehical_no</th>
+                <th>phone</th>
+                <th>INN</th>
+                <th>OUT</th>
+                <th>charges</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">001</td>
+                <td>DIOPOK</td>
+                <td>WB 85 6699</td>
+                <td>9985666321</td>
+                <td>25-oct-2023 / 12:23:30</td>
+                <td>25-oct-2023 / 14:28:50</td>
+                <td>100</td>
+                <td><button type="button">update</button></td>
+            </tr>
+            <tr>
+                <td scope="row">002</td>
+                <td>DIOPOK</td>
+                <td>WB 85 6699</td>
+                <td>8874155321</td>
+                <td>25-oct-2023 / 14:28:50</td>
+                <td>25-oct-2023 / 19:00:50</td>
+                <td>100</td>
+                <td><button type="button">update</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="parking" id="park">
+        <div class="parking-contain">
+            <div class="close-parking">+</div>
+            <h1>parking slip</h1>
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="parking-form" id="parking-form">
+                <div class="" required>
+                    <select title="select" name="parking_operator" id="parking_operator">
+                        <option>RITOM</option>
+                        <option>DIPOK</option>
+                        <option>PRITOM</option>
+                        <option>ASIS</option>
+                        <option>ANUJ</option>
+                    </select>
+                </div>
+                    <input type="text" placeholder="VEHICAL NO." class="parking_vehical-no" name="parking_vehical-no" id="parking_vehical-no">
+                    <input type="number" placeholder="PHONE NO." class="parking_phone-no" name="parking_phone-no"id="parking_phone-no">
+                    <input type="text" placeholder="0000" class="parking_time" name="parking_time" id="parking_time"></input>
+                    <input type="number" placeholder="CHARGE" class="parking_charge"  name="parking_charge" id="parking_charge" required>                
+                    <button type="submit" onclick="Submit()">SUBMIT</button>                
+            </form>
         </div>
-            
-
-        <div class="vehicalinp">
-            <div class="vehicalno">
-                <label>Vehical NO.</label>
-                <input type="text" placeholder="0000"></input>
-            </div>
-            <div class="wheelno">
-                <label>Wheel NO.</label>
-                <input type="text" placeholder="0000"  maxlength="2"></input>
-            </div>
-        </div>
-
-        <div class="aboutgood">
-            <div class="aboutparty">
-                <div class="item">
-                    <label>ITEM --</label>
-                    <input type="text" placeholder="mention item">
-                    <button type="button">+ADD</button>
-                </div>
-                <div class="party">
-                    <label>PARTY --</label>
-                    <input type="text" placeholder="mention party">
-                    <button type="button">+ADD</button>
-                </div>
-                <div class="phone">
-                    <label>PHONE --</label>
-                    <input type="text" placeholder="+91" maxlength="12">
-                    <button type="button">+ADD</button>
-                </div>
-            </div>
-        </div>
-            <br>
-
-            <div class="Weightdata">
-                <div class="firstwt" >
-                    <label>1ST WT</label>
-                    <input type="text" id="num1" onchange="updateWT()"></input>
-                    <input type="text" id="date" onload="getDate()" readonly></input>
-                    <input type="text" id="time" onchange="updateTime()" readonly></input>
-                    
-                </div>
-                <br>
-                <div class="secondwt">
-                    <label>2ND WT</label>
-                    <input type="text" id="num2" onchange="updateWT()"></input>
-                    <input type="text" id="date2" onchange="updateDate()" readonly></input>
-                    <input type="text" id="time2" onchange="updateTime()" readonly></input>
-                </div>
-                <br>
-
-                <div class="netwt">
-                    <label>NET WT</label>
-                    <input type="number" id="result" readonly></input>
-                </div>
-
-            </div>
-
-            <div class="charges">
-                <label>Charges --</label>
-                <input type="text" placeholder="000" maxlength="3"></input>
-            </div>
-
-            <div class="firstwtbtn">
-                <button type="button">CLOSE</button>
-                <button type="reset">RESET</button>
-                <button type="submit" id="save">SAVE</button>
-                <button type="button">Print</button>
-            </div>
-
-    </form>
-
-    <script src="ws.js"></script>
-
+        <script src="parking.js"></script>
 </body>
-
 </html>
