@@ -8,7 +8,7 @@
 </head>
 <body>
     <button type="button" id="parking-data-entry">parking</button>
-    <table class="table">
+    <table class="table" id="data-table">
         <thead>
             <tr>
                 <th>ticket_no</th>
@@ -48,9 +48,10 @@
         <div class="parking-contain">
             <div class="close-parking">+</div>
             <h1>parking slip</h1>
-            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="parking-form" id="parking-form">
+            <!-- <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="parking-form" id="parking-form"> -->
+            <form>    
                 <div class="" required>
-                    <select title="select" name="parking_operator" id="parking_operator">
+                    <select title="select" name="parking_operator" class="select">
                         <option>RITOM</option>
                         <option>DIPOK</option>
                         <option>PRITOM</option>
@@ -58,10 +59,13 @@
                         <option>ANUJ</option>
                     </select>
                 </div>
+                    <input type="text" placeholder="ticket no." id="tickitid">
                     <input type="text" placeholder="VEHICAL NO." class="parking_vehical-no" name="parking_vehical-no" id="parking_vehical-no">
                     <input type="number" placeholder="PHONE NO." class="parking_phone-no" name="parking_phone-no"id="parking_phone-no">
                     <input type="text" placeholder="0000" class="parking_time" name="parking_time" id="parking_time"></input>
                     <input type="number" placeholder="CHARGE" class="parking_charge"  name="parking_charge" id="parking_charge" required>                
-                    <button type="submit" onclick="Submit()">SUBMIT</button>                
+                    <button type="submit" id="submit-btn">SUBMIT</button>                
             </form>
         </div>
+    </div>
+</body>
