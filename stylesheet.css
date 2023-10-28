@@ -16,10 +16,10 @@ td, th {
 tr:nth-child(even),table.list thead>tr {
     background-color: #dddddd;
 }
-.action-btn{
+/* .action-btn{
     display: inline-flex;
     gap: 10px;
-}
+} */
 .parking{
     display: none;
 }
@@ -35,7 +35,7 @@ tr:nth-child(even),table.list thead>tr {
 .parking-contain
 {
     height: 450px;
-    width: 400px;
+    width: 300px;
     background-color: white;
     text-align: center;
     padding: 10px;
@@ -49,7 +49,7 @@ tr:nth-child(even),table.list thead>tr {
 }
 .parking-contain h1{
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: -15px;
 }
 .parking-contain select{
     font-size:large;
