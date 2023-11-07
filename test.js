@@ -1,118 +1,163 @@
-document.getElementById('parking-data-entry').addEventListener("click", function() {
-	document.querySelector('.parking').style.display = "flex";
+
+// -------------------------WEIGHT DATA ENTRY----------------------
+document.getElementById('weight-data-entry').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "flex";
 });
 
-document.querySelector('.close-parking').addEventListener("click", function() {
-	document.querySelector('.parking').style.display = "none";
+document.querySelector('.close-modal').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "none";
 });
 
-/* start all global variable*/
-var formData = [];
-var idEl = document.getElementById("ticketid");
-var select = document.getElementById("select");
-var vehicalid = document.querySelector(".parking_vehical-no");
-var phone = document.querySelector("parking_vehical-no");
-var timeinn = document.getElementById("parking_time");
-var amount = document.querySelector("parking_charge");
-var submitEl = document.getElementById("submit-btn");
+// -------------------------second weight data ENTRY----------------------
+// document.getElementById('').addEventListener("click", function() {
+// 	document.querySelector('.second-entry').style.display = "flex";
+// });
 
-/* end all global variable */
+// document.querySelector('.close-secont-entry').addEventListener("click", function() {
+// 	document.querySelector('.second-entry').style.display = "none";
+// });
 
-/* start register coding*/
-submitEl.onclick = function(){
-	formData.push({
-		ticketid : idEl.value,
-		select : select.value,
-		numplate : vehicalid.value,
-		phone : phone.value,
-		timein : timeinn.value,
-		amount : amount.value,
-	});
-	var formString = JSON.stringify(formData);
-	localStorage.setItem("formData",formString);
+//-----------------------------------------WEIGHT DATA ENTRY-------------------------------------
+function updateWT() {
+	var num1 = parseInt(document.getElementById("num1").value);
+	var num2 = parseInt(document.getElementById("num2").value);
+	var result = num1 - num2;
+	
+	if (result < 0) {
+	  result = Math.abs(result);}
+	
+	document.getElementById("result").value = result;
+  }
+  
+  //------------------------------------------time function
+  function updateTime()
+  {
+	  var currentTime = new Date();
+	  var hours = currentTime.getHours();
+	  var minutes = currentTime.getMinutes();
+	  var seconds = currentTime.getSeconds();
+	 
+	  if (hours < 10) {
+		  hours = "0" + hours;
+	  } 
+  
+	  if (minutes < 10) {
+		minutes = "0" + minutes;
+	  } 
+	  
+	   if (seconds < 10) {
+		seconds = "0" + seconds;
+	  }
+	  
+	  var timeString = hours + ":" + minutes +":" + seconds ;
+	  
+	  document.getElementById("time").value = timeString;
+	  document.getElementById("time2").value = timeString;
+	  document.getElementById("time3").value = timeString;
+  }
+	
+	setInterval(updateTime, 1000);
+	
+  
+  
+	//---------------------------------date function
+  
+  function getDate()
+  {
+	  const today= new Date();
+  
+	  const newdate = today.toISOString().substring(0,10);
+  
+	  document.getElementById("date").value = newdate;
+	  document.getElementById("date2").value = newdate;
+  }
+  setInterval(getDate, 1000);
+
+// ----------------button section -------------------  
+
+// ------ print ------
+function printInvoice(){
+	window.print();
 }
 
+//----------------------------------------right click diabled
+//   document.addEventListener("contextmenu", (event) => {
+// 	event.preventDefault();
+//   });
 
-
-
-
-// -----------------------Not For Use-----------
-// var selectedRow = null
-
-// function onFormSubmit() {
-//     if (validate()) {
-//         var formData = readFormData();
-//         if (selectedRow == null)
-//             insertNewRecord(formData);
-//         else
-//             updateRecord(formData);
-//         resetForm();
-//     }
-// }
-
-// function readFormData() {
-//     var formData = {};
-//     formData["parking_operator"] = document.getElementById("parking_operator").value;
-//     formData["parking_vehical-no"] = document.getElementById("parking_vehical-no").value;
-//     formData["parking_time"] = document.getElementById("parking_time").value;
-//     formData["parking_charge"] = document.getElementById("parking_charge").value;
-//     return formData;
-// }
-
-// function insertNewRecord(data) {
-//     var table = document.getElementById("parking-data-entry").getElementsByTagName('tbody')[0];
-//     var newRow = table.insertRow(table.length);
-//     cell1 = newRow.insertCell(1);
-//     cell1.innerHTML = data.parking_operator;
-//     cell2 = newRow.insertCell(2);
-//     cell2.innerHTML = data.parking_vehical-no;
-//     cell3 = newRow.insertCell(3);
-//     cell3.innerHTML = data.parking_time;
-//     cell4 = newRow.insertCell(5);
-//     cell4.innerHTML = data.parking_charge;
-//     cell4 = newRow.insertCell(6);
-//     cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-//                        <a onClick="onDelete(this)">Delete</a>`;
-// }
-
-// function resetForm() {
-//     document.getElementById("parking_operator").value = "";
-//     document.getElementById("parking_vehical-no").value = "";
-//     document.getElementById("parking_time").value = "";
-//     document.getElementById("parking_charge").value = "";
-//     selectedRow = null;
-// }
-
-// function onEdit(td) {
-//     selectedRow = td.parentElement.parentElement;
-//     document.getElementById("parking_operator").value = selectedRow.cells[1].innerHTML;
-//     document.getElementById("parking_vehical-no").value = selectedRow.cells[2].innerHTML;
-//     document.getElementById("parking_time").value = selectedRow.cells[3].innerHTML;
-//     document.getElementById("parking_charge").value = selectedRow.cells[5].innerHTML;
-// }
-// function updateRecord(formData) {
-//     selectedRow.cells[1].innerHTML = formData.parking_operator;
-//     selectedRow.cells[2].innerHTML = formData.parking_vehical-no;
-//     selectedRow.cells[3].innerHTML = formData.parking_time;
-//     selectedRow.cells[5].innerHTML = formData.parking_charge;
-// }
-
-// function onDelete(td) {
-//     if (confirm('Are you sure to delete this record ?')) {
-//         row = td.parentElement.parentElement;
-//         document.getElementById("datatable").deleteRow(row.rowIndex);
-//         resetForm();
-//     }
-// }
-// function validate() {
-//     isValid = true;
-//     if (document.getElementById("parking_operator").value == "") {
-//         isValid = false;
-//         document.getElementById("fullNameValidationError").classList.remove("hide");
-//     } else {
-//         isValid = true;
-//         if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
-//             document.getElementById("fullNameValidationError").classList.add("hide");
-//     }
-//     return isValid;
-// }
+{/* <script>
+var enterID = document.querySelector("#enterID");
+            var enterName = document.querySelector("#enterName");
+            var enterAge = document.querySelector("#enterAge");
+            var findID = document.querySelector("#findID");
+            var findName = document.querySelector("#findName");
+            var findAge = document.querySelector("#findAge");
+          
+    
+            var insertBtn = document.querySelector("#insert");
+            var updateBtn = document.querySelector("#update");
+            var removeBtn = document.querySelector("#remove");
+            var findBtn = document.querySelector("#find");
+    
+            function InsertData() {
+                set(ref(db, "People/"+ enterID.value),{
+                    ID: enterID.value,
+                    Name: enterName.value,
+                    Age: enterAge.value,
+                })
+                .then(()=>{
+                    alert("Data added successfully");
+                })
+                .catch((error)=>{
+                    alert(error);
+                });
+            }
+    
+            function FindData() {
+                const dbref = ref(db);
+    
+                get(child(dbref, "People/" + findID.value))
+                .then((snapshot)=>{
+                    if(snapshot.exists()){
+                        findName.innerHTML = "Name: " + snapshot.val().Name;
+                        findAge.innerHTML = "Age: " + snapshot.val().Age;
+                    } else {
+                        alert("No data found");
+                    }
+                })
+                .catch((error)=>{
+                    alert(error)
+                })
+                
+            }
+    
+            function UpdateData(){
+                update(ref(db, "People/"+ enterID.value),{
+                    Name: enterName.value,
+                    Age: enterAge.value
+                })
+                .then(()=>{
+                    alert("Data updated successfully");
+                })
+                .catch((error)=>{
+                    alert(error);
+                });
+            }
+    
+            function RemoveData(){
+                remove(ref(db, "People/"+ enterID.value))
+                .then(()=>{
+                    alert("Data deleted successfully");
+                })
+                .catch((error)=>{
+                    alert(error);
+                });
+            }
+    
+            insertBtn.addEventListener('click', InsertData);
+            updateBtn.addEventListener('click', UpdateData);
+            removeBtn.addEventListener('click', RemoveData);
+            findBtn.addEventListener('click', FindData);
+</script> */}
+  
+  

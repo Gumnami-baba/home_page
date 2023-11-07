@@ -1,57 +1,239 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Parking slip</title>
+    <link rel="stylesheet" href="print.css">
+    <title>Document</title>
 </head>
 <body>
-    <button type="button" id="parking-data-entry">parking</button>
-    <table class="table" id="data-table">
-        <thead>
-            <tr>
-                <th>ticket_no</th>
-                <th>operator</th>
-                <th>vehical_no</th>
-                <th>phone</th>
-                <th>INN</th>
-                <th>OUT</th>
-                <th>charges</th>
-                <th></th>
+    <div class="headerbtn">
+        <ul>
+            <li><input type="button" value="DATA ENTRY" id="weight-data-entry"></li> 
+            <li><a href="#">CASH</a></li>
+            <li><a href="#">PARTY</a></li>
+            <li><input type="button" value="PARKING" id="parking-data-entry"></li>
+            <li><a href="#">EDIT SLIP</a></li>
+            <li><a href="#">REPORT</a></li>
+            <li>CHECK SLIP</li>
+        </ul>
+    </div>
+    <!-- <div class="weight-table">
+        <table id="tabledata">
+            <tbody><tr>
+                <th>SERIAL NO</th>
+                <th>VEHICAL NO</th>
+                <th>1st OPERATOR</th>
+                <th>WEIGHT(kg)</th>
+                <th>2nd OPERATOR</th>
+                <th>WEIGHT(kg)</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row">001</td>
-                <td>DIOPOK</td>
-                <td>WB 85 6699</td>
-                <td>9985666321</td>
-                <td>25-oct-2023 / 12:23:30</td>
-                <td>25-oct-2023 / 14:28:50</td>
-                <td>100</td>
-                <td><button type="button">update</button></td>
+            </tbody><tbody>
+    
+            </tbody>  
+            <tbody><tr>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td>hello world</td>
+                <td class="action-btn"><button><i class="bi bi-eye">view</i></button> 
+                    <button><i class="bi bi-eye">edit</i></button></td>
             </tr>
-            <tr>
-                <td scope="row">002</td>
-                <td>DIOPOK</td>
-                <td>WB 85 6699</td>
-                <td>8874155321</td>
-                <td>25-oct-2023 / 14:28:50</td>
-                <td>25-oct-2023 / 19:00:50</td>
-                <td>100</td>
-                <td><button type="button">update</button></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="parking" id="park">
+        </tbody></table>
+    </div> -->
+
+    <!-- <div class="another-table">
+        <div class="parking-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket no</th>
+                        <th>Vehical No</th>
+                        <th>Time-in</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td><button><i class="bi bi-eye">view</i></button></td>
+                    </tr>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td><button><i class="bi bi-eye">view</i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="check-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket no</th>
+                        <th>Vehical No</th>
+                        <th>Time &amp; Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td><button><i class="bi bi-eye">view</i></button></td>
+                    </tr>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td><button><i class="bi bi-eye">view</i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    -->
+    <!--------------------MODAL DATA ENTRY------------------------------------->
+    <!---------------------------------------MODAL DATA ENTRY------------------------------------------->
+    <!-----------------------------------------------------------MODAL DATA ENTRY-------------------------------------------->
+    <div class="bg-modal">
+       
+        <div class="modal-content">
+            <div class="weightbtn">
+                <button type="button">FIRST WEIGHT</button>
+                <button type="button">SECOND WEIGHT</button>
+            </div>
+            <br>
+            <!-- MODAL FORM -->
+            <!-- <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off"> -->
+            <form id="dataentry-form">    
+                <div class="serialcontain">
+                    <div class="serialid">
+                        <label>SERIAL NO.</label>
+                        <input type="text" name="seliarnum" id="serialnum" placeholder="0000">
+                    </div>               
+                    <div class="operator">
+                        <label for="opertor">OPERATOR</label>
+                        <select title="select" name="operator" id="operator">
+                            <option>-- select --</option>
+                            <option value="ritom">RITOM</option>
+                            <option value="dipok">DIPOK</option>
+                            <option value="pritom">PRITOM</option>
+                            <option value="asia">ASIS</option>
+                            <option value="anuj">ANUJ</option>
+                        </select>
+                    </div>
+                </div>
+                    
+        
+                <div class="vehicalinp">
+                    <div class="vehicalno">
+                        <label>VEHICAL NO.</label>
+                        <input type="text" placeholder="0000" name="vehicalnum" id="vehicalnum">
+                    </div>
+                    <div class="wheelno">
+                        <label>WHEEL NO.</label>
+                        <input type="text" placeholder="0000" maxlength="2" name="wheelnum" id="wheelnum">
+                    </div>
+                </div>
+                <br>
+
+                <div class="Weightdata">
+                    <div class="firstwt">
+                        <label>1ST WT</label>
+                        <input type="text" id="num1" onchange="updateWT()" placeholder="0000" name="firstwt">
+                        <input type="text" id="date" onload="getDate()" placeholder="0000" readonly name="date">
+                        <input type="text" id="time" onchange="updateTime()" placeholder="0000" readonly name="time">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <!-- <button type="button" id="second-wt-entry">2ND WT</button> -->
+                    <div class="second-enrty">
+                        <div class="secondwt">
+                            <label>2ND WT</label>
+                            <input type="text" id="num2" onchange="updateWT()" placeholder="0000" name="secondwt">
+                            <input type="text" id="date2" onchange="updateDate()" placeholder="0000" readonly="" name="date2">
+                            <input type="text" id="time2" onchange="updateTime()" placeholder="0000" readonly="" name="time2">
+                        </div>
+                        <br>
+            
+                        <div class="netwt">
+                            <label>NET WT</label>
+                            <input type="number" id="result" readonly placeholder="0000">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="aboutgood">
+                    <div class="aboutparty">
+                        <!-- <div class="item"> -->
+                            <label>ITEM --</label>
+                            <input name="item" type="text" placeholder="mention item">
+                            <button type="button">+ADD</button>
+                        <!-- </div> -->
+                        <br><br>
+                        <!-- <div class="party"> -->
+                            <label>PARTY --</label>
+                            <input name="party" type="text" placeholder="mention party">
+                            <button type="button">+ADD</button>
+                        <!-- </div> -->
+                        <br><br>
+                        <!-- <div class="phone"> -->
+                            <label>PHONE --</label>
+                            <input name="phone" type="text" placeholder="+91" maxlength="12" autocomplete="off">
+                            <button type="button">+ADD</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                    <br>
+                    <div class="charges">
+                        <label>Charges</label>
+                        <input type="text" placeholder="000" name="charges" readonly>
+                        <input type="text" placeholder="paid" maxlength="3" name="paid" id="num3" autocomplete="off">
+                    </div>
+                    <br>
+                    <textarea placeholder="NOTE..." name="note" id="note" cols="70" rows="2"></textarea>
+                    <br><br>
+                    <div class="firstwtbtn">
+                        <button type="button" class="close-modal">CLOSE</button>
+                        <button type="reset">RESET</button>
+                        <button type="button" id="save">SAVE</button>
+                        <!-- <button type="button" id="print-btn">PRINT</button> -->
+                    </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!------------------------------------------- PARKING-------------------------------------------->
+
+
+    <div class="parking" id="park" onload="readAll()">
         <div class="parking-contain">
             <div class="close-parking">+</div>
             <h1>parking slip</h1>
-            <!-- <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="parking-form" id="parking-form"> -->
-            <form>    
-                <div class="" required>
-                    <select title="select" name="parking_operator" class="select">
+            <form class="parking-form">
+                <div class="parking_operator" required="">
+                    <select title="select" name="select" id="select">
+                        <option>-- select --</option>
                         <option>RITOM</option>
                         <option>DIPOK</option>
                         <option>PRITOM</option>
@@ -59,14 +241,256 @@
                         <option>ANUJ</option>
                     </select>
                 </div>
-                    <input type="text" placeholder="ticket no." id="tickitid">
-                    <input type="text" placeholder="VEHICAL NO." class="parking_vehical-no" name="parking_vehical-no" id="parking_vehical-no">
-                    <input type="number" placeholder="PHONE NO." class="parking_phone-no" name="parking_phone-no"id="parking_phone-no">
-                    <input type="text" placeholder="0000" class="parking_time" name="parking_time" id="parking_time"></input>
-                    <input type="number" placeholder="CHARGE" class="parking_charge"  name="parking_charge" id="parking_charge" required>                
-                    <button type="submit" id="submit-btn">SUBMIT</button>                
+                <input type="text" name="ticketid" id="ticketID" placeholder="000">
+                <!-- <label for="">VEHICAL NO.</label> -->
+                <input name="vlno" type="text" placeholder="VEHICAL NO." class="parking_vehical-no">
+                <!-- <label for="phone">PHONE NO.</label> -->
+                <input name="ph" type="number" placeholder="PHONE NO." class="parking_Phone-no">
+                <!-- <label for="">HOURS</label> -->
+                <input type="text" id="time3" onchange="updateTime()" placeholder="0000" class="parking_time" readonly="">
+                <!-- <label for="">CHARGE</label> -->
+                <input name="chrg" type="number" placeholder="CHARGE" class="parking_charge" required="">                
+                <button type="submit" id="parking_submitbtn">SUBMIT</button>                
             </form>
         </div>
     </div>
+
+    <!------------------------------------------------------- print contain ----------------------------------------------->
+    <!------------------------------------------------------- print contain ----------------------------------------------->
+    <h2>* * * SARKAR COMPUTER WEIGH-BRIDGE * * *</h2>
+    <h4>VILL:BANGHATI, NH-2, SERAMPORE, HOOGHLY, W.B. <br>
+        CONTACT-8888888888, 9999999999, GOVT.APPROVED<br>
+        80 MT CAPACITY   ** OPEN 24 X 7 ** 
+    </h4>
+    <div class = "invoice-body print body contain">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="text-blue text-bold table-pad">SERIAL NO. :</td>
+                    <td><input class="no-border" type="text" id="enter-serialno" placeholder="0000"></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-blue text-bold table-pad">OPERATOR :</td>
+                    <td id="m-operator"></td>
+                </tr>
+                <tr>
+                    <td class="text-blue table-pad">VEHICAL NO. :</td>
+                    <td id="m-vehical" style="text-transform: uppercase;"></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-blue table-pad">WHEEL NO. :</td>
+                    <td id="m-wheel"></td>
+                </tr>
+                <tr>
+                    <td class="text-blue table-pad">PARTY :</td>
+                    <td>NA</td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-blue table-pad">ITEM :</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td class="text-center table-pad td-border-line">DATE</td>
+                    <td class="text-center table-pad td-border-line">TIME</td>
+                    <td class="text-center table-pad td-border-line">NO OF BAGS</td>
+                    <td class="text-center table-pad td-border-line">STEPNEY</td>
+                    <td class="text-center table-pad td-border-line">WEIGHT (KG)</td>
+                </tr>
+                <tr class="text-center">
+                    <td class = "text-bold text-blue">1ST WT</td>
+                    <td id="m-date1"></td>
+                    <td id="m-time1"></td>
+                    <td></td>
+                    <td></td>
+                    <td id="m-wt1" class="text-bold text-center"></td>
+                </tr>
+                <tr class="text-center">
+                    <td class = "text-bold text-blue">2ND WT</td>
+                    <td id="m-date2"></td>
+                    <td id="m-time2"></td>
+                    <td></td>
+                    <td></td>
+                    <td id="m-wt2" class="text-bold text-center td-border-line"></td>
+                </tr>
+                <tr>
+                    <td class = "text-bold text-blue text-center">NET WT</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="m-netwt" class="text-bold text-center"></td>
+                </tr>
+                <tr><td style="padding-top: 10px"></td></tr>
+                <tr>
+                    <td class="text-bold text-blue">PAID :</td>
+                    <td id="m-paid"></td>
+                </tr>
+            </tbody>
+            <tr><td class="td-border-line" style="padding-top: 20px"></td></tr>
+            <tr><td class="text-bold">PARTY SIGNETARE</td></tr>
+            
+        </table>
+        <br>
+        
+            
+
+        <div class = "invoice-btns">
+            <button type = "button" id="print-slip" class = "invoice-btn" onclick="printInvoice()">
+                <span>
+                    <i class="fa-solid fa-print"></i>
+                </span>
+                <span>Print</span>
+            </button>
+            <button id="get-Data" class = "invoice-btn">Refresh</button>
+        </div>
+        
+    </div>
+
     <script src="test.js"></script>
+
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"; 
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyCuP0yp2H0R0hnKr2Pn7lPGAyQ-xA7b6Tk",
+            authDomain: "bd-weight-soft.firebaseapp.com",
+            databaseURL: "https://bd-weight-soft-default-rtdb.firebaseio.com",
+            projectId: "bd-weight-soft",
+            storageBucket: "bd-weight-soft.appspot.com",
+            messagingSenderId: "527541501930",
+            appId: "1:527541501930:web:881354838c7fab599e7c93"
+        };
+            const app = initializeApp(firebaseConfig);
+
+            import{getDatabase, ref, get, set, child, update, remove}
+            from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+
+            const db = getDatabase();
+
+            var serialID = document.querySelector("#serialnum");
+            var operator = document.querySelector("#operator");
+            var vehicalNO = document.querySelector("#vehicalnum");
+            var wheelNO = document.querySelector("#wheelnum");
+            var firstWT = document.querySelector("#num1");
+            var firstDate = document.querySelector("#date");
+            var firstTime = document.querySelector("#time");
+            var secondWT = document.querySelector("#num2");
+            var secondDate = document.querySelector("#date2");
+            var secondTime = document.querySelector("#time2");
+            var netwet = document.querySelector("#result")
+            var paid = document.querySelector("#num3");
+            var note = document.querySelector("#note");
+            // ------show Data---------
+            var getserialnum = document.querySelector("#enter-serialno");
+            var showOPT = document.querySelector("#m-operator");
+            var showVHLNO = document.querySelector("#m-vehical");
+            var showWheel = document.querySelector("#m-wheel");
+            var showDate1 = document.querySelector("#m-date1");
+            var showTime1 = document.querySelector("#m-time1");
+            var showWT1 = document.querySelector("#m-wt1");
+            var showDate2 = document.querySelector("#m-date2");
+            var showTime2 = document.querySelector("#m-time2");
+            var showWT2 = document.querySelector("#m-wt2");
+            var showNETWT = document.querySelector("#m-netwt");
+            var showPayment = document.querySelector("#m-paid");
+            // ------buttons-----
+            var savebtn = document.querySelector("#save");
+            var refreshbtn = document.querySelector("#get-Data");
+ 
+            function SubmitData() {
+                set(ref(db, "Weight_Data/"+ serialID.value),{
+                    ID: serialID.value,
+                    Operator: operator.value,
+                    VehicalNo: vehicalNO.value,
+                    WheelNO: wheelNO.value,
+                    FirstDate: firstDate.value,
+                    FirstTime: firstTime.value,
+                    FirstWT: firstWT.value,
+                    SecondDate: secondDate.value,
+                    SecondTime: secondTime.value,
+                    SecondWT: secondWT.value,
+                    NetWT: netwet.value,
+                    Paid: paid.value,
+                    Note: note.value,
+                })
+                .then(()=>{
+                    alert("Data added succesfully")
+                })
+                .catch((error)=>{
+                    alert(error);
+                });
+            };
+
+            function ShowData() {
+                const dbref = ref(db);
+    
+                get(child(dbref, "Weight_Data/" + getserialnum.value))
+                .then((snapshot)=>{
+                    if(snapshot.exists()){
+                        showOPT.innerHTML = snapshot.val().Operator;
+                        showVHLNO.innerHTML = snapshot.val().VehicalNo;
+                        showWheel.innerHTML = snapshot.val().WheelNO;
+                        showDate1.innerHTML = snapshot.val().FirstDate;
+                        showTime1.innerHTML = snapshot.val().FirstTime;
+                        showWT1.innerHTML = snapshot.val().FirstWT;
+                        showDate2.innerHTML = snapshot.val().SecondDate;
+                        showTime2.innerHTML = snapshot.val().SecondTime;
+                        showWT2.innerHTML = snapshot.val().SecondWT;
+                        showNETWT.innerHTML = snapshot.val().NetWT;
+                        showPayment.innerHTML = snapshot.val().Paid;
+                        
+                    } else {
+                        alert("No data found");
+                    }
+                })
+                .catch((error)=>{
+                    alert(error)
+                })
+                
+            }
+            
+            savebtn.addEventListener('click',SubmitData);
+            refreshbtn.addEventListener('click',ShowData);
+
+    </script>
+    
+    <!-- -------------------------- parkintg cloud database ------------------------------ -->
+    <!-- <script type="module"> 
+
+        var ticketID = document.getElementById("ticketID");
+        var operator = document.querySelector(".parking_operator");
+        var vehicalNO = document.querySelector(".parking_vehical-no");
+        var phone = document.querySelector(".parking_phone-no");
+        var Ptime = document.querySelector(".parking_time");
+        var charge = document.querySelector(".parking_charge");
+
+        var submitbtn = document.getElementById("parking_submitbtn");
+
+        function ParkingData(){
+            set(ref(db, "Parking/"+ ticketID.value),{
+                ID: ticketID.value,
+                operator: operator.value,
+                vehicalno: vehicalNO.value,
+                phone: phone.value,
+                Ptime: Ptime.value,
+                Charge: charge.value,
+            })
+            .then(()=>{
+                alert("Data added succesfully")
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        };
+
+        submitbtn.addEventListener('click', ParkingData);
+
+    </script> -->
 </body>
+</html>
+
+
