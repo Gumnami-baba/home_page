@@ -1,5 +1,5 @@
 
-h2, h4{
+h2, p{
     text-align: center;
     padding-top: 10px;
 }
@@ -10,42 +10,40 @@ h2, h4{
 }
 .text-blue{
     color: blue;
-    font-weight: 700;
 }
 .text-center{
     text-align: center;
 }
 .text-start{
     text-align: left;
-    padding-left: 7rem;
+}
+.text-end{
+    text-align: right;
 }
 .text-bold{
     font-weight: 700;
 }
-.print-body{
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+.text-decoration{
+    text-decoration: none;
+    color: black;
 }
-.contain{
-    max-width: 750px;
-    margin:auto;
-}
-.table{
+.contain, table{
     border: none;
-    
+    width: 100%;
+    margin: 0;
+    background: #cccccc;
 }
 .table-pad{
     padding: 8px;
 }
 .td-border-line{
-    /* text-underline-position: black below;
-    text-decoration: underline dashed 1px; */
     border-bottom: black dashed 1px;
 }
 .invoice-btns{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    gap: 100px;
 }
 .invoice-btn{
     padding: 3px 9px;
@@ -59,7 +57,7 @@ h2, h4{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-bottom: 10px;
-}
+} 
 
 @media screen and (max-width: 992px){
     .invoice{
@@ -82,17 +80,17 @@ h2, h4{
         padding: 28px;
     }
 }
-
 @media print{
     .print-area{
         visibility: visible;
-        width: 100%;
         position: absolute;
         left: 0;
         top: 0;
         overflow: hidden;
     }
-
+    div.portrait{
+        transform: rotate(180deg);
+    }
     .overflow-view{
         overflow-x: hidden;
     }
@@ -100,5 +98,4 @@ h2, h4{
     .invoice-btns, .headerbtn{
         display: none;
     }
-    
 }
