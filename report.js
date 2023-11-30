@@ -9,13 +9,32 @@ document.querySelector('.close-modal').addEventListener("click", function() {
 });
 
 // -------------------------second weight data ENTRY----------------------
-// document.getElementById('').addEventListener("click", function() {
-// 	document.querySelector('.second-entry').style.display = "flex";
-// });
+document.getElementById('parking-data-entry').addEventListener("click", function() {
+	document.querySelector('.parking').style.display = "flex";
+});
 
-// document.querySelector('.close-secont-entry').addEventListener("click", function() {
-// 	document.querySelector('.second-entry').style.display = "none";
-// });
+document.querySelector('.close-parking').addEventListener("click", function() {
+	document.querySelector('.parking').style.display = "none";
+});
+
+// ----------------button tabs --------------------
+var tabButtons=document.querySelectorAll(".modal-content .tabs button");
+var tabPanels=document.querySelectorAll(".modal-content  .tabPanel");
+
+function showPanel(panelIndex,colorCode) {
+    tabButtons.forEach(function(node){
+        node.style.backgroundColor="";
+        node.style.color="";
+    });
+    tabButtons[panelIndex].style.backgroundColor= colorCode;
+    tabButtons[panelIndex].style.color= "#1f90ed";
+    tabPanels.forEach(function(node){
+        node.style.display="none";
+    });
+    tabPanels[panelIndex].style.display="block";
+    tabPanels[panelIndex].style.backgroundColor=colorCode;
+}
+showPanel(0,'#fff');
 
 //-----------------------------------------WEIGHT DATA ENTRY-------------------------------------
 function updateWT() {
